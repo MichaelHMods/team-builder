@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactDom from 'react-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -31,3 +32,5 @@ function App()  {
 }
 
 export default App;
+const rootElement = document.getElementById("root");
+ReactDom.render(<App/>, rootElement)

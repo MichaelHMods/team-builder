@@ -19,7 +19,7 @@ const Form = props => {
         setNewUser({ name: "", email: "", role: "" })
     }
 
-  console.log(props);
+  console.log(newUser);
     return (
        <form onSubmit={submitForm}>
            <label htmlFor="name">Name</label>
