@@ -7,8 +7,8 @@ const Card = props => {
         return(
             <div className="card">
         
-                <h1>{member.name} </h1>
-                <h2>{member.role}</h2>
+                <h2>{member.name} </h2>
+                <h3>{member.role}</h3>
                 <p>{member.email}</p>
             </div>
         )

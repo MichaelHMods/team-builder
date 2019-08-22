@@ -6,16 +6,21 @@ const Form = props => {
     const [newUser, setNewUser] = useState({ name: "", email: "", role: ""});
 
     const changeHandler = e => {
+        // record input box, adds to state (newUser) remember spread operator to save values that we are not changing
+    
         setNewUser({...newUser, [e.target.name]: e.target.value})
     }
 
     const submitForm = e => {
+        //stop reload
         e.preventDefault();
         const freshMember = {
             ...newUser,
             id: Date.now()
         };
+        //set state in App
         props.addMember(freshMember);
+        //reset the form important
         setNewUser({ name: "", email: "", role: "" })
     }
 
