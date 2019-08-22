@@ -1,24 +1,31 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
+//importing components
+
+import Form from './Form';
+
+function App()  {
+  const [user, setUser] = useState([{ name: "", email:"", role: ""}]);
+  // function that updates user state to a new array 
+
+  // use spread operator to spread state in the array
+  const newTeamMember = member => {
+    setUser([...user, member])
+  }
+
+  
   return (
+    
+  
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
       </header>
+      <Form addMember={newTeamMember} />
+
     </div>
   );
 }
